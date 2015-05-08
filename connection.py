@@ -17,7 +17,7 @@ class OverLimitBlockingConnectionPool(ConnectionPool):
 
         self.queue_class = queue_class
         self.timeout = timeout
-        self.max_overlimit = 50
+        self.max_overlimit = max_overlimit
         super(OverLimitBlockingConnectionPool, self).__init__(
             connection_class=connection_class,
             max_connections=max_connections,
