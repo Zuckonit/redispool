@@ -13,8 +13,8 @@ class Redis(object):
     @property
     def url(self):
         network  = self.__confmap.get("network")
-        password = self.__confmap.get("password")
-        dbnum = self.__confmap.get("db")
+        password = self.__confmap.get("password", "")
+        dbnum = self.__confmap.get("db", 0)
 
         return "{network}://{password}@{endpoint}{dbnum}".format(
             network  = network,
